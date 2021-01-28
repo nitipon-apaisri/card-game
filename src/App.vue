@@ -1,16 +1,35 @@
 <template>
   <div id="app">
-    <Card />
+    <div class="container">
+      <Card @showActions="activedActions" />
+      <Actions class="action-btns" />
+      <button class="ok-btn" @click="ok">Ok</button>
+    </div>
   </div>
 </template>
 
 <script>
 import Card from "@/components/Card";
-
+import Actions from "@/components/Actions";
 export default {
   name: "App",
   components: {
     Card,
+    Actions,
+  },
+  methods: {
+    activedActions() {
+      this.$root.start();
+      let cardDisplay = document.querySelector(".card-display");
+      cardDisplay.style.justifyContent = "space-between";
+      let fontCard = document.querySelector(".font-card");
+      fontCard.style.display = "block";
+      document.querySelector(".action-btns").style.display = "block";
+    },
+    ok() {
+      this.$root.okButt();
+      // document.querySelector(".ok-btn").style.display = "none";
+    },
   },
 };
 </script>
@@ -36,6 +55,16 @@ body {
     text-align: center;
     color: #2c3e50;
     margin-top: 60px;
+    .container {
+      width: 760px;
+      margin: auto;
+      .action-btns {
+        display: none;
+      }
+      .ok-btn {
+        display: none;
+      }
+    }
   }
 }
 </style>
