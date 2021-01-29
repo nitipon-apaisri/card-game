@@ -28,7 +28,7 @@ export default {
     },
     ok() {
       this.$root.okButt();
-      // document.querySelector(".ok-btn").style.display = "none";
+      document.querySelector(".ok-btn").style.display = "none";
     },
   },
 };

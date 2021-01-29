@@ -1,8 +1,8 @@
 <template>
   <div class="actions">
     <button class="lower" @click="lower">lower</button>
-    <!-- <button class="equal" @click="equal">equal</button>
-    <button class="higher" @click="higher">higher</button> -->
+    <button class="equal" @click="equal">equal</button>
+    <button class="higher" @click="higher">higher</button>
   </div>
 </template>
 
@@ -11,6 +11,12 @@ export default {
   methods: {
     lower() {
       this.$root.lower();
+    },
+    higher() {
+      this.$root.higher();
+    },
+    equal() {
+      this.$root.equal();
     },
   },
 };

@@ -44,12 +44,28 @@ new Vue({
          this.symbol = this.randomSymbol();
       },
       lower() {
+         this.start();
+         if (this.previousNumber > this.number) {
+            console.log("You win");
+         } else {
+            console.log("you lost");
+         }
+      },
+      higher() {
+         this.start();
          if (this.previousNumber < this.number) {
             console.log("You win");
          } else {
             console.log("you lost");
          }
+      },
+      equal() {
          this.start();
+         if (this.previousNumber == this.number) {
+            console.log("You win");
+         } else {
+            console.log("you lost");
+         }
       },
    },
    render: (h) => h(App),
