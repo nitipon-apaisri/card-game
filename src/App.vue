@@ -1,14 +1,15 @@
 <template>
   <div id="app">
+    <Alert class="alert" />
     <div class="container">
       <Card @showActions="activedActions" />
       <Actions class="action-btns" />
-      <button class="ok-btn" @click="ok">Ok</button>
     </div>
   </div>
 </template>
 
 <script>
+import Alert from "@/components/Alert";
 import Card from "@/components/Card";
 import Actions from "@/components/Actions";
 export default {
@@ -16,6 +17,7 @@ export default {
   components: {
     Card,
     Actions,
+    Alert,
   },
   methods: {
     activedActions() {
@@ -25,10 +27,6 @@ export default {
       let fontCard = document.querySelector(".font-card");
       fontCard.style.display = "block";
       document.querySelector(".action-btns").style.display = "block";
-    },
-    ok() {
-      this.$root.okButt();
-      document.querySelector(".ok-btn").style.display = "none";
     },
   },
 };
@@ -54,14 +52,24 @@ body {
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    margin-top: 60px;
+    .alert {
+      position: fixed;
+      z-index: 1;
+      padding-top: 100px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgb(0, 0, 0);
+      background-color: rgba(0, 0, 0, 0.4);
+      display: none;
+    }
     .container {
       width: 760px;
       margin: auto;
       .action-btns {
-        display: none;
-      }
-      .ok-btn {
+        margin-top: 50px;
         display: none;
       }
     }

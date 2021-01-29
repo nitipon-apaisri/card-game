@@ -23,4 +23,30 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.actions {
+  .buttons {
+    cursor: pointer;
+    font-weight: bold;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 8px 24px;
+    background-color: transparent;
+  }
+  .buttons:hover {
+    background-color: #fff;
+    color: #000;
+    transition: 300ms;
+  }
+  .lower {
+    @extend .buttons;
+    border-radius: 50px 0 0 50px;
+  }
+  .equal {
+    @extend .buttons;
+  }
+  .higher {
+    @extend .buttons;
+    border-radius: 0 50px 50px 0;
+  }
+}
 </style>

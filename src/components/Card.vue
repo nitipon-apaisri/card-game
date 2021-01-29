@@ -47,6 +47,7 @@ export default {
   display: flex;
   width: 600px;
   margin: auto;
+  padding: 60px 0;
   justify-content: center;
   .font-card {
     display: none;

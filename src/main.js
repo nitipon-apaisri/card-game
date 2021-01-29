@@ -13,6 +13,7 @@ new Vue({
          number: 0,
          newNumber: 0,
          previousNumber: 0,
+         msg: "",
       };
    },
    methods: {
@@ -25,10 +26,12 @@ new Vue({
          return randomElement;
       },
       okButt() {
+         document.querySelector(".alert").style.display = "none";
          this.previousNumber = this.number;
       },
       start() {
-         document.querySelector(".ok-btn").style.display = "block";
+         this.msg = "Welcome to The Game";
+         document.querySelector(".alert").style.display = "block";
          this.cardNumber = this.randomNumber();
          this.number = this.cardNumber;
          this.newNumber = this.randomNumber();
