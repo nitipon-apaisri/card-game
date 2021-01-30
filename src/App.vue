@@ -62,7 +62,7 @@ body {
       height: 100%;
       overflow: auto;
       background-color: rgb(0, 0, 0);
-      background-color: rgba(0, 0, 0, 0.4);
+      background-color: rgba(0, 0, 0, 0.95);
       display: none;
     }
     .container {

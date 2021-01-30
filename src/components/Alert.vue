@@ -23,4 +23,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.modal {
+  .msg-box {
+    h2 {
+      color: #fff;
+    }
+    button {
+      margin-top: 20px;
+    }
+  }
+}
 </style>

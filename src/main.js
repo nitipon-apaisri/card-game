@@ -49,24 +49,30 @@ new Vue({
       lower() {
          this.start();
          if (this.previousNumber > this.number) {
+            this.msg = "You win";
             console.log("You win");
          } else {
+            this.msg = "You lost";
             console.log("you lost");
          }
       },
       higher() {
          this.start();
          if (this.previousNumber < this.number) {
+            this.msg = "You win";
             console.log("You win");
          } else {
+            this.msg = "You lost";
             console.log("you lost");
          }
       },
       equal() {
          this.start();
          if (this.previousNumber == this.number) {
+            this.msg = "You win";
             console.log("You win");
          } else {
+            this.msg = "You lost";
             console.log("you lost");
          }
       },
