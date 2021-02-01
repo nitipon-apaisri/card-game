@@ -30,6 +30,9 @@ new Vue({
       okButt() {
          document.querySelector(".alert").style.display = "none";
          this.previousNumber = this.number;
+         if (this.maxAttempts == 0) {
+            location.reload();
+         }
       },
       start() {
          this.msg = "Welcome to The Game";
@@ -56,6 +59,9 @@ new Vue({
       lost() {
          this.msg = "You lost";
          this.maxAttempts -= 1;
+         if (this.maxAttempts == 0) {
+            this.msg = "No more attempts, Goodbye 👋";
+         }
       },
       lower() {
          this.start();
