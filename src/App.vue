@@ -2,8 +2,15 @@
   <div id="app">
     <Alert class="alert" />
     <div class="container">
-      <Card @showActions="activedActions" />
-      <Actions class="action-btns" />
+      <div class="content">
+        <div class="score-board">
+          <Points />
+        </div>
+        <div class="main-actions">
+          <Card @showActions="activedActions" />
+          <Actions class="action-btns" />
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -12,12 +19,14 @@
 import Alert from "@/components/Alert";
 import Card from "@/components/Card";
 import Actions from "@/components/Actions";
+import Points from "@/components/Score.vue";
 export default {
   name: "App",
   components: {
     Card,
     Actions,
     Alert,
+    Points,
   },
   methods: {
     activedActions() {
@@ -66,11 +75,24 @@ body {
       display: none;
     }
     .container {
-      width: 760px;
+      width: 1240px;
       margin: auto;
-      .action-btns {
-        margin-top: 50px;
-        display: none;
+      .content {
+        .score-board {
+          width: fit-content;
+          margin-top: 50px;
+          display: none;
+          color: #fff;
+          border: 5px solid #fff;
+          padding: 40px 80px;
+          height: fit-content;
+        }
+        .main-actions {
+          .action-btns {
+            margin-top: 50px;
+            display: none;
+          }
+        }
       }
     }
   }

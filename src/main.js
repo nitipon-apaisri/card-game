@@ -14,6 +14,8 @@ new Vue({
          newNumber: 0,
          previousNumber: 0,
          msg: "",
+         maxAttempts: 5,
+         points: 0,
       };
    },
    methods: {
@@ -32,6 +34,7 @@ new Vue({
       start() {
          this.msg = "Welcome to The Game";
          document.querySelector(".alert").style.display = "block";
+         document.querySelector(".score-board").style.display = "block";
          this.cardNumber = this.randomNumber();
          this.number = this.cardNumber;
          this.newNumber = this.randomNumber();
@@ -46,34 +49,36 @@ new Vue({
          }
          this.symbol = this.randomSymbol();
       },
+      win() {
+         this.points += 10;
+         this.msg = "You win";
+      },
+      lost() {
+         this.msg = "You lost";
+         this.maxAttempts -= 1;
+      },
       lower() {
          this.start();
          if (this.previousNumber > this.number) {
-            this.msg = "You win";
-            console.log("You win");
+            this.win();
          } else {
-            this.msg = "You lost";
-            console.log("you lost");
+            this.lost();
          }
       },
       higher() {
          this.start();
          if (this.previousNumber < this.number) {
-            this.msg = "You win";
-            console.log("You win");
+            this.win();
          } else {
-            this.msg = "You lost";
-            console.log("you lost");
+            this.lost();
          }
       },
       equal() {
          this.start();
          if (this.previousNumber == this.number) {
-            this.msg = "You win";
-            console.log("You win");
+            this.win();
          } else {
-            this.msg = "You lost";
-            console.log("you lost");
+            this.lost();
          }
       },
    },
