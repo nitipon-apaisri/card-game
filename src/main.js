@@ -35,7 +35,7 @@ new Vue({
          }
       },
       start() {
-         this.msg = "Welcome to The Game";
+         this.msg = "Welcome to Totoro";
          document.querySelector(".alert").style.display = "block";
          document.querySelector(".score-board").style.display = "block";
          this.cardNumber = this.randomNumber();
